@@ -76,18 +76,4 @@ shared_examples_for Prometheus::Client::Metric do
       expect(subject.type).to be_a(Symbol)
     end
   end
-
-  describe '#get' do
-    it 'returns the current metric value' do
-      expect(subject.get).to be_a(type)
-    end
-
-    context "with a subject that expects labels" do
-      subject { described_class.new(:foo, docstring: 'Labels', labels: [:test]) }
-
-      it 'returns the current metric value for a given label set' do
-        expect(subject.get(labels: { test: 'label' })).to be_a(type)
-      end
-    end
-  end
 end

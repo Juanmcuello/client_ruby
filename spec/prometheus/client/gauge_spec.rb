@@ -18,9 +18,7 @@ describe Prometheus::Client::Gauge do
                                   labels: expected_labels)
   end
 
-  it_behaves_like Prometheus::Client::Metric do
-    let(:type) { Float }
-  end
+  it_behaves_like Prometheus::Client::Metric
 
   describe '#set' do
     it 'sets a metric value' do

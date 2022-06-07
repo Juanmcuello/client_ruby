@@ -19,9 +19,7 @@ describe Prometheus::Client::Histogram do
                         buckets: [2.5, 5, 10])
   end
 
-  it_behaves_like Prometheus::Client::Metric do
-    let(:type) { Hash }
-  end
+  it_behaves_like Prometheus::Client::Metric
 
   describe '#initialization' do
     it 'raise error for unsorted buckets' do

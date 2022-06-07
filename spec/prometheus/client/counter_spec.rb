@@ -19,9 +19,7 @@ describe Prometheus::Client::Counter do
                                     labels: expected_labels)
   end
 
-  it_behaves_like Prometheus::Client::Metric do
-    let(:type) { Float }
-  end
+  it_behaves_like Prometheus::Client::Metric
 
   describe '#increment' do
     it 'increments the counter' do

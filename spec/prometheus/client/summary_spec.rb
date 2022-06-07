@@ -18,9 +18,7 @@ describe Prometheus::Client::Summary do
                                     labels: expected_labels)
   end
 
-  it_behaves_like Prometheus::Client::Metric do
-    let(:type) { Hash }
-  end
+  it_behaves_like Prometheus::Client::Metric
 
   describe '#initialization' do
     it 'raise error for `quantile` label' do
